@@ -16,16 +16,27 @@ A personnel management system for businesses, helping to manage employee informa
 - Manage attendance sheets, payroll, calculate wages based on working days, allowances, bonuses, deductions
 # User Interface
 ## Login Form
-![Mô tả ảnh](https://drive.google.com/drive/u/0/folders/11sb3yOWvauehtG_JFNBaS6K4PXQabEcx)
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/FormDangNhap.png)
 ## Main Form
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/Form%20Cha.png)
 ## Change Password Form
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/Form%20Doi%20Mat%20Khau.png)
 ## Employee CRUD Form
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/CRUD_NhanVien_1.png)
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/CRUD_NhanVien_2.png)
 ## Category Management Forms: 
 ### Ethnicity Form
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/CRUD_DanToc.png)
 Other category management forms are similar...
 ## Contract Form
+![Mô tả ảnh](https://raw.githubusercontent.com/tynkeyrm0511/QUANLYNHANSU/refs/heads/master/Images_Readme/CRUD_HopDong.png)
 ## Rewards Form
+![Mô tả ảnh](https://github.com/tynkeyrm0511/QUANLYNHANSU/blob/master/Images_Readme/CRUD_KhenThuong.png)
 ## Disciplinary Form
+![Mô tả ảnh](https://github.com/tynkeyrm0511/QUANLYNHANSU/blob/master/Images_Readme/CRUD_KyLuat.png)
 ## Termination Form
+![Mô tả ảnh](https://github.com/tynkeyrm0511/QUANLYNHANSU/blob/master/Images_Readme/CRUD_ThoiViec.png)
 ## Attendance Sheet Form
+![Mô tả ảnh](https://github.com/tynkeyrm0511/QUANLYNHANSU/blob/master/Images_Readme/CRUD_BangCong.png)
 ## Payroll Form
+![Mô tả ảnh](https://github.com/tynkeyrm0511/QUANLYNHANSU/blob/master/Images_Readme/CRUD_BangLuong.png)
