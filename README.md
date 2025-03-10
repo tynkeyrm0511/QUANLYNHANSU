@@ -16,6 +16,7 @@ A personnel management system for businesses, helping to manage employee informa
 - Manage attendance sheets, payroll, calculate wages based on working days, allowances, bonuses, deductions
 # User Interface
 ## Login Form
+![Mô tả ảnh](https://drive.google.com/drive/u/0/folders/11sb3yOWvauehtG_JFNBaS6K4PXQabEcx)
 ## Main Form
 ## Change Password Form
 ## Employee CRUD Form
