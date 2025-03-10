@@ -1,0 +1,1435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="QLNHANSUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_ADMIN">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="IDUSER" Type="int" Nullable="false" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_BANGCONG">
+          <Key>
+            <PropertyRef Name="MABC" />
+          </Key>
+          <Property Name="MABC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SONGAYCONG" Type="int" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="IDLC" Type="int" />
+          <Property Name="THANG" Type="int" />
+          <Property Name="NAM" Type="int" />
+          <Property Name="DELETED_BY" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_BAOHIEM">
+          <Key>
+            <PropertyRef Name="IDBH" />
+          </Key>
+          <Property Name="IDBH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SOBH" Type="nvarchar" MaxLength="50" />
+          <Property Name="TENBH" Type="nvarchar" MaxLength="50" />
+          <Property Name="NGAYCAP" Type="datetime" />
+          <Property Name="NOICAP" Type="nvarchar" MaxLength="50" />
+          <Property Name="NOIKHAMBENH" Type="nchar" MaxLength="10" />
+          <Property Name="MANV" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_BOPHAN">
+          <Key>
+            <PropertyRef Name="IDBP" />
+          </Key>
+          <Property Name="IDBP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENBP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_CHITIET_PHUCAP">
+          <Key>
+            <PropertyRef Name="ID_CTPC" />
+          </Key>
+          <Property Name="ID_CTPC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDPC" Type="int" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
+          <Property Name="SOTIEN" Type="float" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCV" />
+          </Key>
+          <Property Name="IDCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCV" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_DANTOC">
+          <Key>
+            <PropertyRef Name="IDDT" />
+          </Key>
+          <Property Name="IDDT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENDT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_HOPDONG">
+          <Key>
+            <PropertyRef Name="SOHD" />
+          </Key>
+          <Property Name="SOHD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGAYBD" Type="datetime" />
+          <Property Name="NGAYKT" Type="datetime" />
+          <Property Name="NGAYKY" Type="datetime" />
+          <Property Name="NOIDUNG" Type="nvarchar(max)" />
+          <Property Name="LANKY" Type="int" />
+          <Property Name="THOIHAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="HESOLUONG" Type="float" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_KHENTHUONG_KYLUAT">
+          <Key>
+            <PropertyRef Name="SOQUYETDINH" />
+          </Key>
+          <Property Name="SOQUYETDINH" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="500" />
+          <Property Name="NGAY" Type="datetime" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="LOAI" Type="int" />
+          <Property Name="TUNGAY" Type="datetime" />
+          <Property Name="DENNGAY" Type="datetime" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_LOAICA">
+          <Key>
+            <PropertyRef Name="IDLOAICA" />
+          </Key>
+          <Property Name="IDLOAICA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLOAICA" Type="nvarchar" MaxLength="50" />
+          <Property Name="HESO" Type="float" />
+        </EntityType>
+        <EntityType Name="tb_LOAICONG">
+          <Key>
+            <PropertyRef Name="IDLC" />
+          </Key>
+          <Property Name="IDLC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENLC" Type="nvarchar" MaxLength="50" />
+          <Property Name="HESO" Type="float" />
+        </EntityType>
+        <EntityType Name="tb_LUONG">
+          <Key>
+            <PropertyRef Name="IDL" />
+          </Key>
+          <Property Name="IDL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAM" Type="int" />
+          <Property Name="THANG" Type="int" />
+          <Property Name="SOTIEN" Type="float" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="DELETED_BY" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Name="MANV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="SDT" Type="nchar" MaxLength="10" />
+          <Property Name="CCCD" Type="nchar" MaxLength="12" />
+          <Property Name="NGAYSINH" Type="datetime" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+          <Property Name="HINHANH" Type="varbinary(max)" />
+          <Property Name="IDPB" Type="int" />
+          <Property Name="IDBP" Type="int" />
+          <Property Name="IDCV" Type="int" />
+          <Property Name="IDTD" Type="int" />
+          <Property Name="IDDT" Type="int" />
+          <Property Name="IDTG" Type="int" />
+          <Property Name="IDGT" Type="int" />
+          <Property Name="DATHOIVIEC" Type="bit" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN_GIOITINH">
+          <Key>
+            <PropertyRef Name="IDGT" />
+          </Key>
+          <Property Name="IDGT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENGT" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="NGAYNOPDON" Type="datetime" />
+          <Property Name="NGAYNGHI" Type="datetime" />
+          <Property Name="LYDO" Type="nvarchar" MaxLength="200" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="200" />
+          <Property Name="CREATED_BY" Type="int" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="UPDATED_BY" Type="int" />
+          <Property Name="UPDATED_DATE" Type="datetime" />
+          <Property Name="DELETED_BY" Type="int" />
+          <Property Name="DELETED_DATE" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPB" />
+          </Key>
+          <Property Name="IDPB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPB" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_PHUCAP">
+          <Key>
+            <PropertyRef Name="IDPC" />
+          </Key>
+          <Property Name="IDPC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENPC" Type="nvarchar" MaxLength="50" />
+          <Property Name="SOTIEN" Type="float" />
+        </EntityType>
+        <EntityType Name="tb_TANGCA">
+          <Key>
+            <PropertyRef Name="IDTC" />
+          </Key>
+          <Property Name="IDTC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAM" Type="int" />
+          <Property Name="THANG" Type="int" />
+          <Property Name="NGAY" Type="int" />
+          <Property Name="SOGIOTC" Type="float" />
+          <Property Name="MANV" Type="int" />
+          <Property Name="IDLOAICA" Type="int" />
+        </EntityType>
+        <EntityType Name="tb_TONGIAO">
+          <Key>
+            <PropertyRef Name="IDTG" />
+          </Key>
+          <Property Name="IDTG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTG" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_TRINHDO">
+          <Key>
+            <PropertyRef Name="IDTD" />
+          </Key>
+          <Property Name="IDTD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENTD" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tb_UNGLUONG">
+          <Key>
+            <PropertyRef Name="IDUL" />
+          </Key>
+          <Property Name="IDUL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAM" Type="int" />
+          <Property Name="THANG" Type="int" />
+          <Property Name="NGAY" Type="int" />
+          <Property Name="SOTIEN" Type="float" />
+          <Property Name="TRANGTHAI" Type="bit" />
+          <Property Name="MANV" Type="int" />
+        </EntityType>
+        <Association Name="FK_NHANVIEN_tb_BOPHAN">
+          <End Role="tb_BOPHAN" Type="Self.tb_BOPHAN" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOPHAN">
+              <PropertyRef Name="IDBP" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDBP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_CHUCVU">
+          <End Role="tb_CHUCVU" Type="Self.tb_CHUCVU" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCV" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_DANTOC1">
+          <End Role="tb_DANTOC" Type="Self.tb_DANTOC" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_DANTOC">
+              <PropertyRef Name="IDDT" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_PHONGBAN">
+          <End Role="tb_PHONGBAN" Type="Self.tb_PHONGBAN" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPB" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDPB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_TONGIAO1">
+          <End Role="tb_TONGIAO" Type="Self.tb_TONGIAO" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TONGIAO">
+              <PropertyRef Name="IDTG" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_TRINHDO">
+          <End Role="tb_TRINHDO" Type="Self.tb_TRINHDO" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TRINHDO">
+              <PropertyRef Name="IDTD" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_BANGCONG_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_BANGCONG" Type="Self.tb_BANGCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_BANGCONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_BANGCONG_tb_LOAICONG">
+          <End Role="tb_LOAICONG" Type="Self.tb_LOAICONG" Multiplicity="0..1" />
+          <End Role="tb_BANGCONG" Type="Self.tb_BANGCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAICONG">
+              <PropertyRef Name="IDLC" />
+            </Principal>
+            <Dependent Role="tb_BANGCONG">
+              <PropertyRef Name="IDLC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_BAOHIEM_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_BAOHIEM" Type="Self.tb_BAOHIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_BAOHIEM">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIET_PHUCAP_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_CHITIET_PHUCAP" Type="Self.tb_CHITIET_PHUCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_CHITIET_PHUCAP">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIET_PHUCAP_tb_PHUCAP">
+          <End Role="tb_PHUCAP" Type="Self.tb_PHUCAP" Multiplicity="0..1" />
+          <End Role="tb_CHITIET_PHUCAP" Type="Self.tb_CHITIET_PHUCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHUCAP">
+              <PropertyRef Name="IDPC" />
+            </Principal>
+            <Dependent Role="tb_CHITIET_PHUCAP">
+              <PropertyRef Name="IDPC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_HOPDONG_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_HOPDONG" Type="Self.tb_HOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_HOPDONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_KHENTHUONG_KYLUAT_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_KHENTHUONG_KYLUAT" Type="Self.tb_KHENTHUONG_KYLUAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_KHENTHUONG_KYLUAT">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_LUONG_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_LUONG" Type="Self.tb_LUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_LUONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH">
+          <End Role="tb_NHANVIEN_GIOITINH" Type="Self.tb_NHANVIEN_GIOITINH" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN_GIOITINH">
+              <PropertyRef Name="IDGT" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_NHANVIEN_THOIVIEC" Type="Self.tb_NHANVIEN_THOIVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN_THOIVIEC">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TangCa_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_TANGCA" Type="Self.tb_TANGCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_TANGCA">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TangCa_tb_LOAICA">
+          <End Role="tb_LOAICA" Type="Self.tb_LOAICA" Multiplicity="0..1" />
+          <End Role="tb_TANGCA" Type="Self.tb_TANGCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAICA">
+              <PropertyRef Name="IDLOAICA" />
+            </Principal>
+            <Dependent Role="tb_TANGCA">
+              <PropertyRef Name="IDLOAICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_UNGLUONG_NHANVIEN">
+          <End Role="tb_NHANVIEN" Type="Self.tb_NHANVIEN" Multiplicity="0..1" />
+          <End Role="tb_UNGLUONG" Type="Self.tb_UNGLUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_UNGLUONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLNHANSUModelStoreContainer">
+          <EntitySet Name="tb_ADMIN" EntityType="Self.tb_ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_BANGCONG" EntityType="Self.tb_BANGCONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_BAOHIEM" EntityType="Self.tb_BAOHIEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_BOPHAN" EntityType="Self.tb_BOPHAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHITIET_PHUCAP" EntityType="Self.tb_CHITIET_PHUCAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_CHUCVU" EntityType="Self.tb_CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_DANTOC" EntityType="Self.tb_DANTOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_HOPDONG" EntityType="Self.tb_HOPDONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_KHENTHUONG_KYLUAT" EntityType="Self.tb_KHENTHUONG_KYLUAT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LOAICA" EntityType="Self.tb_LOAICA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LOAICONG" EntityType="Self.tb_LOAICONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_LUONG" EntityType="Self.tb_LUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="Self.tb_NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHANVIEN_GIOITINH" EntityType="Self.tb_NHANVIEN_GIOITINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_NHANVIEN_THOIVIEC" EntityType="Self.tb_NHANVIEN_THOIVIEC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="Self.tb_PHONGBAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_PHUCAP" EntityType="Self.tb_PHUCAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TANGCA" EntityType="Self.tb_TANGCA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TONGIAO" EntityType="Self.tb_TONGIAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_TRINHDO" EntityType="Self.tb_TRINHDO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_UNGLUONG" EntityType="Self.tb_UNGLUONG" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_NHANVIEN_tb_BOPHAN" Association="Self.FK_NHANVIEN_tb_BOPHAN">
+            <End Role="tb_BOPHAN" EntitySet="tb_BOPHAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_CHUCVU" Association="Self.FK_NHANVIEN_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_DANTOC1" Association="Self.FK_NHANVIEN_tb_DANTOC1">
+            <End Role="tb_DANTOC" EntitySet="tb_DANTOC" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_PHONGBAN" Association="Self.FK_NHANVIEN_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_TONGIAO1" Association="Self.FK_NHANVIEN_tb_TONGIAO1">
+            <End Role="tb_TONGIAO" EntitySet="tb_TONGIAO" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_TRINHDO" Association="Self.FK_NHANVIEN_tb_TRINHDO">
+            <End Role="tb_TRINHDO" EntitySet="tb_TRINHDO" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_BANGCONG_NHANVIEN" Association="Self.FK_tb_BANGCONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_BANGCONG" EntitySet="tb_BANGCONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_BANGCONG_tb_LOAICONG" Association="Self.FK_tb_BANGCONG_tb_LOAICONG">
+            <End Role="tb_LOAICONG" EntitySet="tb_LOAICONG" />
+            <End Role="tb_BANGCONG" EntitySet="tb_BANGCONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_BAOHIEM_NHANVIEN" Association="Self.FK_tb_BAOHIEM_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_BAOHIEM" EntitySet="tb_BAOHIEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIET_PHUCAP_NHANVIEN" Association="Self.FK_tb_CHITIET_PHUCAP_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_CHITIET_PHUCAP" EntitySet="tb_CHITIET_PHUCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIET_PHUCAP_tb_PHUCAP" Association="Self.FK_tb_CHITIET_PHUCAP_tb_PHUCAP">
+            <End Role="tb_PHUCAP" EntitySet="tb_PHUCAP" />
+            <End Role="tb_CHITIET_PHUCAP" EntitySet="tb_CHITIET_PHUCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_HOPDONG_NHANVIEN" Association="Self.FK_tb_HOPDONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_HOPDONG" EntitySet="tb_HOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_KHENTHUONG_KYLUAT_NHANVIEN" Association="Self.FK_tb_KHENTHUONG_KYLUAT_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_KHENTHUONG_KYLUAT" EntitySet="tb_KHENTHUONG_KYLUAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_LUONG_NHANVIEN" Association="Self.FK_tb_LUONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_LUONG" EntitySet="tb_LUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH" Association="Self.FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH">
+            <End Role="tb_NHANVIEN_GIOITINH" EntitySet="tb_NHANVIEN_GIOITINH" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN" Association="Self.FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_NHANVIEN_THOIVIEC" EntitySet="tb_NHANVIEN_THOIVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TangCa_NHANVIEN" Association="Self.FK_tb_TangCa_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TANGCA" EntitySet="tb_TANGCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TangCa_tb_LOAICA" Association="Self.FK_tb_TangCa_tb_LOAICA">
+            <End Role="tb_LOAICA" EntitySet="tb_LOAICA" />
+            <End Role="tb_TANGCA" EntitySet="tb_TANGCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_UNGLUONG_NHANVIEN" Association="Self.FK_tb_UNGLUONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_UNGLUONG" EntitySet="tb_UNGLUONG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLNHANSUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="QLNHANSUEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_BANGCONG" EntityType="QLNHANSUModel.tb_BANGCONG" />
+          <EntitySet Name="tb_BAOHIEM" EntityType="QLNHANSUModel.tb_BAOHIEM" />
+          <EntitySet Name="tb_BOPHAN" EntityType="QLNHANSUModel.tb_BOPHAN" />
+          <EntitySet Name="tb_CHITIET_PHUCAP" EntityType="QLNHANSUModel.tb_CHITIET_PHUCAP" />
+          <EntitySet Name="tb_CHUCVU" EntityType="QLNHANSUModel.tb_CHUCVU" />
+          <EntitySet Name="tb_DANTOC" EntityType="QLNHANSUModel.tb_DANTOC" />
+          <EntitySet Name="tb_HOPDONG" EntityType="QLNHANSUModel.tb_HOPDONG" />
+          <EntitySet Name="tb_KHENTHUONG_KYLUAT" EntityType="QLNHANSUModel.tb_KHENTHUONG_KYLUAT" />
+          <EntitySet Name="tb_LOAICA" EntityType="QLNHANSUModel.tb_LOAICA" />
+          <EntitySet Name="tb_LOAICONG" EntityType="QLNHANSUModel.tb_LOAICONG" />
+          <EntitySet Name="tb_LUONG" EntityType="QLNHANSUModel.tb_LUONG" />
+          <EntitySet Name="tb_NHANVIEN" EntityType="QLNHANSUModel.tb_NHANVIEN" />
+          <EntitySet Name="tb_NHANVIEN_GIOITINH" EntityType="QLNHANSUModel.tb_NHANVIEN_GIOITINH" />
+          <EntitySet Name="tb_NHANVIEN_THOIVIEC" EntityType="QLNHANSUModel.tb_NHANVIEN_THOIVIEC" />
+          <EntitySet Name="tb_PHONGBAN" EntityType="QLNHANSUModel.tb_PHONGBAN" />
+          <EntitySet Name="tb_PHUCAP" EntityType="QLNHANSUModel.tb_PHUCAP" />
+          <EntitySet Name="tb_TANGCA" EntityType="QLNHANSUModel.tb_TANGCA" />
+          <EntitySet Name="tb_TONGIAO" EntityType="QLNHANSUModel.tb_TONGIAO" />
+          <EntitySet Name="tb_TRINHDO" EntityType="QLNHANSUModel.tb_TRINHDO" />
+          <EntitySet Name="tb_UNGLUONG" EntityType="QLNHANSUModel.tb_UNGLUONG" />
+          <AssociationSet Name="FK_tb_BANGCONG_NHANVIEN" Association="QLNHANSUModel.FK_tb_BANGCONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_BANGCONG" EntitySet="tb_BANGCONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_BANGCONG_tb_LOAICONG" Association="QLNHANSUModel.FK_tb_BANGCONG_tb_LOAICONG">
+            <End Role="tb_LOAICONG" EntitySet="tb_LOAICONG" />
+            <End Role="tb_BANGCONG" EntitySet="tb_BANGCONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_BAOHIEM_NHANVIEN" Association="QLNHANSUModel.FK_tb_BAOHIEM_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_BAOHIEM" EntitySet="tb_BAOHIEM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_BOPHAN" Association="QLNHANSUModel.FK_NHANVIEN_tb_BOPHAN">
+            <End Role="tb_BOPHAN" EntitySet="tb_BOPHAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIET_PHUCAP_NHANVIEN" Association="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_CHITIET_PHUCAP" EntitySet="tb_CHITIET_PHUCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_CHITIET_PHUCAP_tb_PHUCAP" Association="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_tb_PHUCAP">
+            <End Role="tb_PHUCAP" EntitySet="tb_PHUCAP" />
+            <End Role="tb_CHITIET_PHUCAP" EntitySet="tb_CHITIET_PHUCAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_CHUCVU" Association="QLNHANSUModel.FK_NHANVIEN_tb_CHUCVU">
+            <End Role="tb_CHUCVU" EntitySet="tb_CHUCVU" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_DANTOC1" Association="QLNHANSUModel.FK_NHANVIEN_tb_DANTOC1">
+            <End Role="tb_DANTOC" EntitySet="tb_DANTOC" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_HOPDONG_NHANVIEN" Association="QLNHANSUModel.FK_tb_HOPDONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_HOPDONG" EntitySet="tb_HOPDONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_KHENTHUONG_KYLUAT_NHANVIEN" Association="QLNHANSUModel.FK_tb_KHENTHUONG_KYLUAT_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_KHENTHUONG_KYLUAT" EntitySet="tb_KHENTHUONG_KYLUAT" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TangCa_tb_LOAICA" Association="QLNHANSUModel.FK_tb_TangCa_tb_LOAICA">
+            <End Role="tb_LOAICA" EntitySet="tb_LOAICA" />
+            <End Role="tb_TANGCA" EntitySet="tb_TANGCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_LUONG_NHANVIEN" Association="QLNHANSUModel.FK_tb_LUONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_LUONG" EntitySet="tb_LUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_PHONGBAN" Association="QLNHANSUModel.FK_NHANVIEN_tb_PHONGBAN">
+            <End Role="tb_PHONGBAN" EntitySet="tb_PHONGBAN" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_TONGIAO1" Association="QLNHANSUModel.FK_NHANVIEN_tb_TONGIAO1">
+            <End Role="tb_TONGIAO" EntitySet="tb_TONGIAO" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_tb_TRINHDO" Association="QLNHANSUModel.FK_NHANVIEN_tb_TRINHDO">
+            <End Role="tb_TRINHDO" EntitySet="tb_TRINHDO" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH" Association="QLNHANSUModel.FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH">
+            <End Role="tb_NHANVIEN_GIOITINH" EntitySet="tb_NHANVIEN_GIOITINH" />
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN" Association="QLNHANSUModel.FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_NHANVIEN_THOIVIEC" EntitySet="tb_NHANVIEN_THOIVIEC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_TangCa_NHANVIEN" Association="QLNHANSUModel.FK_tb_TangCa_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_TANGCA" EntitySet="tb_TANGCA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tb_UNGLUONG_NHANVIEN" Association="QLNHANSUModel.FK_tb_UNGLUONG_NHANVIEN">
+            <End Role="tb_NHANVIEN" EntitySet="tb_NHANVIEN" />
+            <End Role="tb_UNGLUONG" EntitySet="tb_UNGLUONG" />
+          </AssociationSet>
+          <EntitySet Name="tb_ADMIN" EntityType="QLNHANSUModel.tb_ADMIN" />
+        </EntityContainer>
+        <EntityType Name="tb_BANGCONG">
+          <Key>
+            <PropertyRef Name="MABC" />
+          </Key>
+          <Property Name="MABC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SONGAYCONG" Type="Int32" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="IDLC" Type="Int32" />
+          <Property Name="THANG" Type="Int32" />
+          <Property Name="NAM" Type="Int32" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_BANGCONG_NHANVIEN" FromRole="tb_BANGCONG" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_LOAICONG" Relationship="QLNHANSUModel.FK_tb_BANGCONG_tb_LOAICONG" FromRole="tb_BANGCONG" ToRole="tb_LOAICONG" />
+        </EntityType>
+        <EntityType Name="tb_BAOHIEM">
+          <Key>
+            <PropertyRef Name="IDBH" />
+          </Key>
+          <Property Name="IDBH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SOBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TENBH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYCAP" Type="DateTime" Precision="3" />
+          <Property Name="NOICAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NOIKHAMBENH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MANV" Type="Int32" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_BAOHIEM_NHANVIEN" FromRole="tb_BAOHIEM" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_BOPHAN">
+          <Key>
+            <PropertyRef Name="IDBP" />
+          </Key>
+          <Property Name="IDBP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENBP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_BOPHAN" FromRole="tb_BOPHAN" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_CHITIET_PHUCAP">
+          <Key>
+            <PropertyRef Name="ID_CTPC" />
+          </Key>
+          <Property Name="ID_CTPC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDPC" Type="Int32" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SOTIEN" Type="Double" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_NHANVIEN" FromRole="tb_CHITIET_PHUCAP" ToRole="tb_NHANVIEN" />
+          <NavigationProperty Name="tb_PHUCAP" Relationship="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_tb_PHUCAP" FromRole="tb_CHITIET_PHUCAP" ToRole="tb_PHUCAP" />
+        </EntityType>
+        <EntityType Name="tb_CHUCVU">
+          <Key>
+            <PropertyRef Name="IDCV" />
+          </Key>
+          <Property Name="IDCV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_CHUCVU" FromRole="tb_CHUCVU" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_DANTOC">
+          <Key>
+            <PropertyRef Name="IDDT" />
+          </Key>
+          <Property Name="IDDT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENDT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_DANTOC1" FromRole="tb_DANTOC" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_HOPDONG">
+          <Key>
+            <PropertyRef Name="SOHD" />
+          </Key>
+          <Property Name="SOHD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYBD" Type="DateTime" Precision="3" />
+          <Property Name="NGAYKT" Type="DateTime" Precision="3" />
+          <Property Name="NGAYKY" Type="DateTime" Precision="3" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LANKY" Type="Int32" />
+          <Property Name="THOIHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HESOLUONG" Type="Double" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_HOPDONG_NHANVIEN" FromRole="tb_HOPDONG" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_KHENTHUONG_KYLUAT">
+          <Key>
+            <PropertyRef Name="SOQUYETDINH" />
+          </Key>
+          <Property Name="SOQUYETDINH" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY" Type="DateTime" Precision="3" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="LOAI" Type="Int32" />
+          <Property Name="TUNGAY" Type="DateTime" Precision="3" />
+          <Property Name="DENNGAY" Type="DateTime" Precision="3" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_KHENTHUONG_KYLUAT_NHANVIEN" FromRole="tb_KHENTHUONG_KYLUAT" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_LOAICA">
+          <Key>
+            <PropertyRef Name="IDLOAICA" />
+          </Key>
+          <Property Name="IDLOAICA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLOAICA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HESO" Type="Double" />
+          <NavigationProperty Name="tb_TANGCA" Relationship="QLNHANSUModel.FK_tb_TangCa_tb_LOAICA" FromRole="tb_LOAICA" ToRole="tb_TANGCA" />
+        </EntityType>
+        <EntityType Name="tb_LOAICONG">
+          <Key>
+            <PropertyRef Name="IDLC" />
+          </Key>
+          <Property Name="IDLC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENLC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HESO" Type="Double" />
+          <NavigationProperty Name="tb_BANGCONG" Relationship="QLNHANSUModel.FK_tb_BANGCONG_tb_LOAICONG" FromRole="tb_LOAICONG" ToRole="tb_BANGCONG" />
+        </EntityType>
+        <EntityType Name="tb_LUONG">
+          <Key>
+            <PropertyRef Name="IDL" />
+          </Key>
+          <Property Name="IDL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAM" Type="Int32" />
+          <Property Name="THANG" Type="Int32" />
+          <Property Name="SOTIEN" Type="Double" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_LUONG_NHANVIEN" FromRole="tb_LUONG" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN">
+          <Key>
+            <PropertyRef Name="MANV" />
+          </Key>
+          <Property Name="MANV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CCCD" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <Property Name="NGAYSINH" Type="DateTime" Precision="3" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HINHANH" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IDPB" Type="Int32" />
+          <Property Name="IDBP" Type="Int32" />
+          <Property Name="IDCV" Type="Int32" />
+          <Property Name="IDTD" Type="Int32" />
+          <Property Name="IDDT" Type="Int32" />
+          <Property Name="IDTG" Type="Int32" />
+          <Property Name="IDGT" Type="Int32" />
+          <Property Name="DATHOIVIEC" Type="Boolean" />
+          <NavigationProperty Name="tb_BANGCONG" Relationship="QLNHANSUModel.FK_tb_BANGCONG_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_BANGCONG" />
+          <NavigationProperty Name="tb_BAOHIEM" Relationship="QLNHANSUModel.FK_tb_BAOHIEM_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_BAOHIEM" />
+          <NavigationProperty Name="tb_BOPHAN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_BOPHAN" FromRole="tb_NHANVIEN" ToRole="tb_BOPHAN" />
+          <NavigationProperty Name="tb_CHITIET_PHUCAP" Relationship="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_CHITIET_PHUCAP" />
+          <NavigationProperty Name="tb_CHUCVU" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_CHUCVU" FromRole="tb_NHANVIEN" ToRole="tb_CHUCVU" />
+          <NavigationProperty Name="tb_DANTOC" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_DANTOC1" FromRole="tb_NHANVIEN" ToRole="tb_DANTOC" />
+          <NavigationProperty Name="tb_HOPDONG" Relationship="QLNHANSUModel.FK_tb_HOPDONG_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_HOPDONG" />
+          <NavigationProperty Name="tb_KHENTHUONG_KYLUAT" Relationship="QLNHANSUModel.FK_tb_KHENTHUONG_KYLUAT_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_KHENTHUONG_KYLUAT" />
+          <NavigationProperty Name="tb_LUONG" Relationship="QLNHANSUModel.FK_tb_LUONG_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_LUONG" />
+          <NavigationProperty Name="tb_PHONGBAN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_PHONGBAN" FromRole="tb_NHANVIEN" ToRole="tb_PHONGBAN" />
+          <NavigationProperty Name="tb_TONGIAO" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_TONGIAO1" FromRole="tb_NHANVIEN" ToRole="tb_TONGIAO" />
+          <NavigationProperty Name="tb_TRINHDO" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_TRINHDO" FromRole="tb_NHANVIEN" ToRole="tb_TRINHDO" />
+          <NavigationProperty Name="tb_NHANVIEN_GIOITINH" Relationship="QLNHANSUModel.FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH" FromRole="tb_NHANVIEN" ToRole="tb_NHANVIEN_GIOITINH" />
+          <NavigationProperty Name="tb_NHANVIEN_THOIVIEC" Relationship="QLNHANSUModel.FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_NHANVIEN_THOIVIEC" />
+          <NavigationProperty Name="tb_TANGCA" Relationship="QLNHANSUModel.FK_tb_TangCa_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_TANGCA" />
+          <NavigationProperty Name="tb_UNGLUONG" Relationship="QLNHANSUModel.FK_tb_UNGLUONG_NHANVIEN" FromRole="tb_NHANVIEN" ToRole="tb_UNGLUONG" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN_GIOITINH">
+          <Key>
+            <PropertyRef Name="IDGT" />
+          </Key>
+          <Property Name="IDGT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENGT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH" FromRole="tb_NHANVIEN_GIOITINH" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_NHANVIEN_THOIVIEC">
+          <Key>
+            <PropertyRef Name="SOQD" />
+          </Key>
+          <Property Name="SOQD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="NGAYNOPDON" Type="DateTime" Precision="3" />
+          <Property Name="NGAYNGHI" Type="DateTime" Precision="3" />
+          <Property Name="LYDO" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CREATED_BY" Type="Int32" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATED_BY" Type="Int32" />
+          <Property Name="UPDATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="DELETED_BY" Type="Int32" />
+          <Property Name="DELETED_DATE" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN" FromRole="tb_NHANVIEN_THOIVIEC" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_PHONGBAN">
+          <Key>
+            <PropertyRef Name="IDPB" />
+          </Key>
+          <Property Name="IDPB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_PHONGBAN" FromRole="tb_PHONGBAN" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_PHUCAP">
+          <Key>
+            <PropertyRef Name="IDPC" />
+          </Key>
+          <Property Name="IDPC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENPC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SOTIEN" Type="Double" />
+          <NavigationProperty Name="tb_CHITIET_PHUCAP" Relationship="QLNHANSUModel.FK_tb_CHITIET_PHUCAP_tb_PHUCAP" FromRole="tb_PHUCAP" ToRole="tb_CHITIET_PHUCAP" />
+        </EntityType>
+        <EntityType Name="tb_TANGCA">
+          <Key>
+            <PropertyRef Name="IDTC" />
+          </Key>
+          <Property Name="IDTC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAM" Type="Int32" />
+          <Property Name="THANG" Type="Int32" />
+          <Property Name="NGAY" Type="Int32" />
+          <Property Name="SOGIOTC" Type="Double" />
+          <Property Name="MANV" Type="Int32" />
+          <Property Name="IDLOAICA" Type="Int32" />
+          <NavigationProperty Name="tb_LOAICA" Relationship="QLNHANSUModel.FK_tb_TangCa_tb_LOAICA" FromRole="tb_TANGCA" ToRole="tb_LOAICA" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_TangCa_NHANVIEN" FromRole="tb_TANGCA" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_TONGIAO">
+          <Key>
+            <PropertyRef Name="IDTG" />
+          </Key>
+          <Property Name="IDTG" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_TONGIAO1" FromRole="tb_TONGIAO" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_TRINHDO">
+          <Key>
+            <PropertyRef Name="IDTD" />
+          </Key>
+          <Property Name="IDTD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENTD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_NHANVIEN_tb_TRINHDO" FromRole="tb_TRINHDO" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <EntityType Name="tb_UNGLUONG">
+          <Key>
+            <PropertyRef Name="IDUL" />
+          </Key>
+          <Property Name="IDUL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAM" Type="Int32" />
+          <Property Name="THANG" Type="Int32" />
+          <Property Name="NGAY" Type="Int32" />
+          <Property Name="SOTIEN" Type="Double" />
+          <Property Name="TRANGTHAI" Type="Boolean" />
+          <Property Name="MANV" Type="Int32" />
+          <NavigationProperty Name="tb_NHANVIEN" Relationship="QLNHANSUModel.FK_tb_UNGLUONG_NHANVIEN" FromRole="tb_UNGLUONG" ToRole="tb_NHANVIEN" />
+        </EntityType>
+        <Association Name="FK_tb_BANGCONG_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_BANGCONG" Role="tb_BANGCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_BANGCONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_BANGCONG_tb_LOAICONG">
+          <End Type="QLNHANSUModel.tb_LOAICONG" Role="tb_LOAICONG" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_BANGCONG" Role="tb_BANGCONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAICONG">
+              <PropertyRef Name="IDLC" />
+            </Principal>
+            <Dependent Role="tb_BANGCONG">
+              <PropertyRef Name="IDLC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_BAOHIEM_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_BAOHIEM" Role="tb_BAOHIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_BAOHIEM">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_BOPHAN">
+          <End Type="QLNHANSUModel.tb_BOPHAN" Role="tb_BOPHAN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_BOPHAN">
+              <PropertyRef Name="IDBP" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDBP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIET_PHUCAP_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_CHITIET_PHUCAP" Role="tb_CHITIET_PHUCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_CHITIET_PHUCAP">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_CHITIET_PHUCAP_tb_PHUCAP">
+          <End Type="QLNHANSUModel.tb_PHUCAP" Role="tb_PHUCAP" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_CHITIET_PHUCAP" Role="tb_CHITIET_PHUCAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHUCAP">
+              <PropertyRef Name="IDPC" />
+            </Principal>
+            <Dependent Role="tb_CHITIET_PHUCAP">
+              <PropertyRef Name="IDPC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_CHUCVU">
+          <End Type="QLNHANSUModel.tb_CHUCVU" Role="tb_CHUCVU" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_CHUCVU">
+              <PropertyRef Name="IDCV" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDCV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_DANTOC1">
+          <End Type="QLNHANSUModel.tb_DANTOC" Role="tb_DANTOC" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_DANTOC">
+              <PropertyRef Name="IDDT" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_HOPDONG_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_HOPDONG" Role="tb_HOPDONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_HOPDONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_KHENTHUONG_KYLUAT_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_KHENTHUONG_KYLUAT" Role="tb_KHENTHUONG_KYLUAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_KHENTHUONG_KYLUAT">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TangCa_tb_LOAICA">
+          <End Type="QLNHANSUModel.tb_LOAICA" Role="tb_LOAICA" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_TANGCA" Role="tb_TANGCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_LOAICA">
+              <PropertyRef Name="IDLOAICA" />
+            </Principal>
+            <Dependent Role="tb_TANGCA">
+              <PropertyRef Name="IDLOAICA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_LUONG_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_LUONG" Role="tb_LUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_LUONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_PHONGBAN">
+          <End Type="QLNHANSUModel.tb_PHONGBAN" Role="tb_PHONGBAN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_PHONGBAN">
+              <PropertyRef Name="IDPB" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDPB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_TONGIAO1">
+          <End Type="QLNHANSUModel.tb_TONGIAO" Role="tb_TONGIAO" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TONGIAO">
+              <PropertyRef Name="IDTG" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDTG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_tb_TRINHDO">
+          <End Type="QLNHANSUModel.tb_TRINHDO" Role="tb_TRINHDO" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_TRINHDO">
+              <PropertyRef Name="IDTD" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDTD" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_tb_NHANVIEN_GIOITINH">
+          <End Type="QLNHANSUModel.tb_NHANVIEN_GIOITINH" Role="tb_NHANVIEN_GIOITINH" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN_GIOITINH">
+              <PropertyRef Name="IDGT" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN">
+              <PropertyRef Name="IDGT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_NHANVIEN_THOIVIEC_tb_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_NHANVIEN_THOIVIEC" Role="tb_NHANVIEN_THOIVIEC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_NHANVIEN_THOIVIEC">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_TangCa_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_TANGCA" Role="tb_TANGCA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_TANGCA">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tb_UNGLUONG_NHANVIEN">
+          <End Type="QLNHANSUModel.tb_NHANVIEN" Role="tb_NHANVIEN" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.tb_UNGLUONG" Role="tb_UNGLUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tb_NHANVIEN">
+              <PropertyRef Name="MANV" />
+            </Principal>
+            <Dependent Role="tb_UNGLUONG">
+              <PropertyRef Name="MANV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tb_ADMIN">
+          <Key>
+            <PropertyRef Name="IDUSER" />
+          </Key>
+          <Property Name="IDUSER" Type="Int32" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLNHANSUModelStoreContainer" CdmEntityContainer="QLNHANSUEntities">
+          <EntitySetMapping Name="tb_BANGCONG">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_BANGCONG">
+              <MappingFragment StoreEntitySet="tb_BANGCONG">
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="IDLC" ColumnName="IDLC" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="SONGAYCONG" ColumnName="SONGAYCONG" />
+                <ScalarProperty Name="MABC" ColumnName="MABC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_BAOHIEM">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_BAOHIEM">
+              <MappingFragment StoreEntitySet="tb_BAOHIEM">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="NOIKHAMBENH" ColumnName="NOIKHAMBENH" />
+                <ScalarProperty Name="NOICAP" ColumnName="NOICAP" />
+                <ScalarProperty Name="NGAYCAP" ColumnName="NGAYCAP" />
+                <ScalarProperty Name="TENBH" ColumnName="TENBH" />
+                <ScalarProperty Name="SOBH" ColumnName="SOBH" />
+                <ScalarProperty Name="IDBH" ColumnName="IDBH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_BOPHAN">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_BOPHAN">
+              <MappingFragment StoreEntitySet="tb_BOPHAN">
+                <ScalarProperty Name="TENBP" ColumnName="TENBP" />
+                <ScalarProperty Name="IDBP" ColumnName="IDBP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHITIET_PHUCAP">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_CHITIET_PHUCAP">
+              <MappingFragment StoreEntitySet="tb_CHITIET_PHUCAP">
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="IDPC" ColumnName="IDPC" />
+                <ScalarProperty Name="ID_CTPC" ColumnName="ID_CTPC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_CHUCVU">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_CHUCVU">
+              <MappingFragment StoreEntitySet="tb_CHUCVU">
+                <ScalarProperty Name="TENCV" ColumnName="TENCV" />
+                <ScalarProperty Name="IDCV" ColumnName="IDCV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_DANTOC">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_DANTOC">
+              <MappingFragment StoreEntitySet="tb_DANTOC">
+                <ScalarProperty Name="TENDT" ColumnName="TENDT" />
+                <ScalarProperty Name="IDDT" ColumnName="IDDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_HOPDONG">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_HOPDONG">
+              <MappingFragment StoreEntitySet="tb_HOPDONG">
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="HESOLUONG" ColumnName="HESOLUONG" />
+                <ScalarProperty Name="THOIHAN" ColumnName="THOIHAN" />
+                <ScalarProperty Name="LANKY" ColumnName="LANKY" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="NGAYKY" ColumnName="NGAYKY" />
+                <ScalarProperty Name="NGAYKT" ColumnName="NGAYKT" />
+                <ScalarProperty Name="NGAYBD" ColumnName="NGAYBD" />
+                <ScalarProperty Name="SOHD" ColumnName="SOHD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_KHENTHUONG_KYLUAT">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_KHENTHUONG_KYLUAT">
+              <MappingFragment StoreEntitySet="tb_KHENTHUONG_KYLUAT">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="DENNGAY" ColumnName="DENNGAY" />
+                <ScalarProperty Name="TUNGAY" ColumnName="TUNGAY" />
+                <ScalarProperty Name="LOAI" ColumnName="LOAI" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="SOQUYETDINH" ColumnName="SOQUYETDINH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LOAICA">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_LOAICA">
+              <MappingFragment StoreEntitySet="tb_LOAICA">
+                <ScalarProperty Name="HESO" ColumnName="HESO" />
+                <ScalarProperty Name="TENLOAICA" ColumnName="TENLOAICA" />
+                <ScalarProperty Name="IDLOAICA" ColumnName="IDLOAICA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LOAICONG">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_LOAICONG">
+              <MappingFragment StoreEntitySet="tb_LOAICONG">
+                <ScalarProperty Name="HESO" ColumnName="HESO" />
+                <ScalarProperty Name="TENLC" ColumnName="TENLC" />
+                <ScalarProperty Name="IDLC" ColumnName="IDLC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_LUONG">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_LUONG">
+              <MappingFragment StoreEntitySet="tb_LUONG">
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="IDL" ColumnName="IDL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHANVIEN">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_NHANVIEN">
+              <MappingFragment StoreEntitySet="tb_NHANVIEN">
+                <ScalarProperty Name="DATHOIVIEC" ColumnName="DATHOIVIEC" />
+                <ScalarProperty Name="IDGT" ColumnName="IDGT" />
+                <ScalarProperty Name="IDTG" ColumnName="IDTG" />
+                <ScalarProperty Name="IDDT" ColumnName="IDDT" />
+                <ScalarProperty Name="IDTD" ColumnName="IDTD" />
+                <ScalarProperty Name="IDCV" ColumnName="IDCV" />
+                <ScalarProperty Name="IDBP" ColumnName="IDBP" />
+                <ScalarProperty Name="IDPB" ColumnName="IDPB" />
+                <ScalarProperty Name="HINHANH" ColumnName="HINHANH" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="NGAYSINH" ColumnName="NGAYSINH" />
+                <ScalarProperty Name="CCCD" ColumnName="CCCD" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHANVIEN_GIOITINH">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_NHANVIEN_GIOITINH">
+              <MappingFragment StoreEntitySet="tb_NHANVIEN_GIOITINH">
+                <ScalarProperty Name="TENGT" ColumnName="TENGT" />
+                <ScalarProperty Name="IDGT" ColumnName="IDGT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_NHANVIEN_THOIVIEC">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_NHANVIEN_THOIVIEC">
+              <MappingFragment StoreEntitySet="tb_NHANVIEN_THOIVIEC">
+                <ScalarProperty Name="DELETED_DATE" ColumnName="DELETED_DATE" />
+                <ScalarProperty Name="DELETED_BY" ColumnName="DELETED_BY" />
+                <ScalarProperty Name="UPDATED_DATE" ColumnName="UPDATED_DATE" />
+                <ScalarProperty Name="UPDATED_BY" ColumnName="UPDATED_BY" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="CREATED_BY" ColumnName="CREATED_BY" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="LYDO" ColumnName="LYDO" />
+                <ScalarProperty Name="NGAYNGHI" ColumnName="NGAYNGHI" />
+                <ScalarProperty Name="NGAYNOPDON" ColumnName="NGAYNOPDON" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="SOQD" ColumnName="SOQD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHONGBAN">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_PHONGBAN">
+              <MappingFragment StoreEntitySet="tb_PHONGBAN">
+                <ScalarProperty Name="TENPB" ColumnName="TENPB" />
+                <ScalarProperty Name="IDPB" ColumnName="IDPB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_PHUCAP">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_PHUCAP">
+              <MappingFragment StoreEntitySet="tb_PHUCAP">
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="TENPC" ColumnName="TENPC" />
+                <ScalarProperty Name="IDPC" ColumnName="IDPC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TANGCA">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_TANGCA">
+              <MappingFragment StoreEntitySet="tb_TANGCA">
+                <ScalarProperty Name="IDLOAICA" ColumnName="IDLOAICA" />
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="SOGIOTC" ColumnName="SOGIOTC" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="IDTC" ColumnName="IDTC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TONGIAO">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_TONGIAO">
+              <MappingFragment StoreEntitySet="tb_TONGIAO">
+                <ScalarProperty Name="TENTG" ColumnName="TENTG" />
+                <ScalarProperty Name="IDTG" ColumnName="IDTG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_TRINHDO">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_TRINHDO">
+              <MappingFragment StoreEntitySet="tb_TRINHDO">
+                <ScalarProperty Name="TENTD" ColumnName="TENTD" />
+                <ScalarProperty Name="IDTD" ColumnName="IDTD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_UNGLUONG">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_UNGLUONG">
+              <MappingFragment StoreEntitySet="tb_UNGLUONG">
+                <ScalarProperty Name="MANV" ColumnName="MANV" />
+                <ScalarProperty Name="TRANGTHAI" ColumnName="TRANGTHAI" />
+                <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
+                <ScalarProperty Name="NGAY" ColumnName="NGAY" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="IDUL" ColumnName="IDUL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_ADMIN">
+            <EntityTypeMapping TypeName="QLNHANSUModel.tb_ADMIN">
+              <MappingFragment StoreEntitySet="tb_ADMIN">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="IDUSER" ColumnName="IDUSER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
